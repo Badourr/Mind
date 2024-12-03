@@ -1,0 +1,119 @@
+/* CSS Variables for easy customization */
+:root {
+  --primary-color: #4caf50;
+  --secondary-color: #ff9800;
+  --bg-gradient: linear-gradient(135deg, #f4f4f9, #e0e0f8);
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --card-shadow: rgba(0, 0, 0, 0.1);
+  --icon-gradient: linear-gradient(45deg, #ff6f61, #ff9671);
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg-gradient);
+  overflow: hidden;
+}
+
+/* Dashboard Layout */
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.section {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 10px 20px var(--card-shadow);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.section:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.section h2 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 10px auto;
+  background: var(--icon-gradient);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2em;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.progress-bar {
+  width: 80%;
+  height: 10px;
+  background: #ddd;
+  border-radius: 5px;
+  margin: 15px auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar span {
+  display: block;
+  width: 70%; /* Example progress */
+  height: 100%;
+  background: var(--primary-color);
+}
+
+.timer {
+  font-size: 2em;
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+/* Special Full-width Section */
+.mind-goal {
+  grid-column: span 4;
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--primary-color);
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 5px 15px var(--card-shadow);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .dashboard {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Background Canvas */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
