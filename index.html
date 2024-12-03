@@ -57,7 +57,7 @@
     .icon {
       width: 80px;
       height: 80px;
-      margin: 0 auto 10px auto;
+      margin: 0 auto 10px;
       background: var(--icon-gradient);
       border-radius: 50%;
       display: flex;
@@ -75,12 +75,11 @@
       border-radius: 5px;
       margin: 15px auto;
       overflow: hidden;
-      position: relative;
     }
 
     .progress-bar span {
       display: block;
-      width: 70%; /* Example progress */
+      width: 70%;
       height: 100%;
       background: var(--primary-color);
     }
@@ -101,6 +100,36 @@
       border-radius: 20px;
       padding: 20px;
       box-shadow: 0 5px 15px var(--card-shadow);
+    }
+
+    /* Floating Bar */
+    .floating-bar {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+      background: white;
+      padding: 12px;
+      border-radius: 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .task-btn {
+      background: linear-gradient(135deg, #6a85b6, #bac8e0);
+      border: none;
+      padding: 12px 24px;
+      border-radius: 20px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .task-btn:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #5a75a6, #9ab8e0);
     }
 
     /* Responsive Design */
@@ -177,6 +206,14 @@
     </section>
   </main>
 
+  <!-- Floating Bar -->
+  <nav class="floating-bar">
+    <button class="task-btn">Mind</button>
+    <button class="task-btn">Body</button>
+    <button class="task-btn">Soul</button>
+    <button class="task-btn">Bank</button>
+  </nav>
+
   <!-- Three.js Script -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script>
@@ -215,13 +252,6 @@
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
-      <nav class="floating-bar">
-  <button class="task-btn">Mind</button>
-  <button class="task-btn">Body</button>
-  <button class="task-btn">Soul</button>
-  <button class="task-btn">Bank</button>
-</nav>
-
     });
   </script>
 </body>
