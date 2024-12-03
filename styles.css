@@ -116,4 +116,33 @@ canvas {
   width: 100%;
   height: 100%;
   z-index: 1;
+  /* Floating Bar */
+.floating-bar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  background: white;
+  padding: 12px;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Task Button */
+.task-btn {
+  background: linear-gradient(135deg, #6a85b6, #bac8e0);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s, background 0.3s;
+}
+
+.task-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #5a75a6, #9ab8e0);
 }
